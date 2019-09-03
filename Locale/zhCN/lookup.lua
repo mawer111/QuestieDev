@@ -1,5 +1,4 @@
-LangNameLookup = {};
-LangNameLookup['zhCN'] = {
+LangNameLookup['{}'] = {{
 [3] = '食腐者',
 [6] = '狗头人歹徒',
 [30] = '森林蜘蛛',

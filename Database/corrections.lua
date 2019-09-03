@@ -31,6 +31,8 @@ questExclusiveGroupFixes = {
     [1642] = {2998,3861},
     [2998] = {1642,3861},
     [3861] = {1642,2998},
+    [431] = {411}, -- candles of beckoning
+    [410] = {411} -- the dormant shade
 }
 
 questItemBlacklist = {
@@ -133,14 +135,17 @@ questObjectFixes = {
 questMobFixes = {
     [300] = {'Zzarc\' Vul',1050,1050,33,33,0,{[10]={{38,80},},},nil,10,nil,nil},
     [5082] = {'Vincent Hyal',1605,1605,30,30,0,{[11]={{10.8,60.4}}},nil,11,{1302},{1301}},
-    [4360] = {'Mirefin Warrior',1208,1257,37,39,0,{},nil,15,nil,nil} -- TODO: remove this after the db is fixed!!! This is just to fix tooltips
+    [4360] = {'Mirefin Warrior',1208,1257,37,39,0,{},nil,15,nil,nil}, -- TODO: remove this after the db is fixed!!! This is just to fix tooltips
+    [11876] = {'Demon Spirit',1743,1743,37,37,0,{[405]={{55.00,26.60},},},nil,405,nil,nil,92,nil,},
 }
 
 questItemFixes = {
     [5475] = {"Wooden Key",{},{3919,3834},{}},
     [5519] = {"Iron Pommel",{1027},{3928},{}},
     [4611] = {"Blue Pearl",{705},{},{2744}},
-    [3340] = {"Incendicite Ore",{466},{},{1610,1667}}
+    [3340] = {"Incendicite Ore",{466},{},{1610,1667}},
+    [4483] = {"Burning Key",{651},{},{2689}},
+    [3829] = {"Frost Oil",{713,1193},{},{}}
 }
 --hack
 for k,v in pairs(questItemFixes) do CHANGEME_Questie4_ItemDB[k]=v; end

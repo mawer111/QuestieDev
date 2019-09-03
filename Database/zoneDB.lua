@@ -242,7 +242,7 @@ local zoneDataClassicDemo = {--AreaName, Continent, AreaID, mapID (Yes it is act
     {"ArathiBasin", 529,3358,461}
 }
 
-local Questie2ZoneTable = {
+Questie2ZoneTable = {
     ["WorldMap"] = {1337, 1337, 0, 08}, --
     ["Azeroth"] = {-1, -1, -1, 2, 0}, --
     ["Kalimdor"] = {-1, -1, -1, 1, 0}, --
@@ -312,7 +312,7 @@ local Questie2ZoneTable = {
     ["Sunwell"] = {64, 2, 15, -1, -1} -- code copied from questhelper (this is actually the only code that was directly copied, the database was put through JavaRefactorProject
 }
 
-local Questie2ZoneTableInverse = {};
+Questie2ZoneTableInverse = {};
 
 for k,v in pairs(Questie2ZoneTable) do
 

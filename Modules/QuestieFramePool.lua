@@ -27,14 +27,18 @@ ICON_TYPE_BLACK = _QuestieFramePool.addonPath.."Icons\\black.blp"
 StaticPopupDialogs["QUESTIE_CONFIRMHIDE"] = {
     text = "", -- set before showing
     QuestID = 0, -- set before showing
-    button1 = "Yes",
-    button2 = "No",
+    button1 = QuestieLocale:GetUIString("CONFIRM_HIDE_YES"),
+    button2 = QuestieLocale:GetUIString("CONFIRM_HIDE_NO"),
     OnAccept = function()
         QuestieQuest:HideQuest(StaticPopupDialogs["QUESTIE_CONFIRMHIDE"].QuestID)
     end,
     SetQuest = function(self, id)
         self.QuestID = id
         self.text = QuestieLocale:GetUIString("CONFIRM_HIDE_QUEST", QuestieDB:GetQuest(self.QuestID):GetColoredQuestName())
+		
+		-- locale might not be loaded when this is first created (this does happen almost always)
+        self.button1 = QuestieLocale:GetUIString("CONFIRM_HIDE_YES")
+        self.button2 = QuestieLocale:GetUIString("CONFIRM_HIDE_NO")
     end,
     OnShow = function(self)
         self:SetFrameStrata("TOOLTIP")
@@ -388,9 +392,9 @@ function _QuestieFramePool:Questie_Tooltip(self)
                         end
                         local dat = {};
                         if icon.data.Type == "complete" then
-                            dat.type = "(Complete)";
+                            dat.type = QuestieLocale:GetUIString("TOOLTIP_QUEST_COMPLETE");
                         else
-                            dat.type = "(Available)";
+                            dat.type = QuestieLocale:GetUIString("TOOLTIP_QUEST_AVAILABLE");
                         end
                         dat.title = icon.data.QuestData:GetColoredQuestName()
                         dat.subData = icon.data.QuestData.Description
@@ -446,15 +450,17 @@ function _QuestieFramePool:Questie_Tooltip(self)
         for k, v in pairs(self.questOrder) do -- this logic really needs to be improved
             if haveGiver then
                 self:AddLine(" ")
-                self:AddDoubleLine(k, "(Active)");
+                self:AddDoubleLine(k, QuestieLocale:GetUIString("TOOLTIP_QUEST_ACTIVE"));
                 haveGiver = false -- looks better when only the first one shows (active)
             else
                 self:AddLine(k);
             end
             if shift then
                 for k2, v2 in pairs(v) do
-                    for k3 in pairs(v2) do
-                        self:AddLine("   |cFFDDDDDD" .. k3);
+                    if type(v2) == "table" then
+                        for k3 in pairs(v2) do
+                            self:AddLine("   |cFFDDDDDD" .. k3);
+                        end
                     end
                     self:AddLine("      |cFF33FF33" .. k2);
                 end
