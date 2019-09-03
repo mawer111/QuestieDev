@@ -1,3 +1,4 @@
+LangNameLookup = {};
 LangNameLookup['zhCN'] = {
 [3] = '食腐者',
 [6] = '狗头人歹徒',
@@ -7414,6 +7415,7 @@ LangNameLookup['zhCN'] = {
 [17804] = '侍卫洛文',
 [18199] = 'Silithus Dust Turnin Quest Doodad Horde',
 }
+LangQuestLookup = {};
 LangQuestLookup['zhCN'] = {
 [2] = {nil, nil, nil},
 [5] = {'饥肠辘辘的基特斯', '我已经困在这个鬼镇里好几个星期了，除了虫子和野草之外什么吃的都没有！我想吃点正常的食物，即使要多花点钱也无所谓。 给我找点美食来，我就给你大笔的奖赏。 听说夜色镇血鸦旅店的厨师格鲁奥做的黑蟹蛋糕很不错……', '和厨师格鲁奥谈一谈。'},
